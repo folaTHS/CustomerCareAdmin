@@ -1,0 +1,37 @@
+#CustomerCare_details_mainDiv{
+    display: flex;
+    justify-content: center;
+
+}
+#CustomerCare_details_wrapperDiv{
+    background-color: #FFFFFF;
+    width: 13.12rem;
+    height: 6.25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#CustomerCare_details_wrapperDiv p{
+    text-align: center;
+    font-size:0.9rem;
+    color: #000000;
+}
+#CustomerCare_details_wrapperDiv button{
+    width: 5.18rem;
+    height: 1.37rem;
+    border: 1px solid #0E093C;
+    background-color: #0E093C ;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+}
+#CustomerCare_details_wrapperDiv button:nth-child(2){
+    background-color: transparent;
+}
+#btnDiv{
+    display: flex;
+    column-gap: 1rem;
+}

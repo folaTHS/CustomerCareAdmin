@@ -1,0 +1,123 @@
+
+#SignIn_mainDiv{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, .2)), url("/CustomerCare_BG.svg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#SignIn_mainDiv img{
+    width: 100%;
+}
+#admin_signIn_wrapperDiv{
+    background-color: rgba(255, 255, 255, .3);
+    width: 38.1rem;
+    height: 33.5rem;
+    border-radius: 2rem;
+    border: 1px solid #FFFFFF;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    margin-right:8.4rem;
+    box-sizing: border-box;
+}
+
+#SignIn_headerDiv{
+    text-align: center;
+}
+#signIn_Text{
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 0.5rem;
+    line-height: 1.5rem;
+}
+#login_detailsText{
+    color: #FFFFFF;
+    font-size: 1rem;
+    height: 3rem;
+}
+#inputDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.56rem;
+}
+#inputDiv input{
+    border: 1px solid #FFFFFF;
+    height: 3.12rem;
+}
+
+#inputDiv input::placeholder{
+    color: #FFFFFF;
+    font-size: 0.93rem;
+}
+#inputDiv label{
+    font-size: 1rem;
+    color: #1A1A1A;
+    background-color: #F4F0F0;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+
+}
+#Stay_signedIn{
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+#Stay_signedIn input{
+    width: 1.12rem;
+    height: 1.12rem;
+}
+#forget_passwordText{
+    color: #1A1A1A;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#checkbox_passwordDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btnDiv{
+   margin-top: 4.5rem;
+}
+#btnDiv button{
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    font-size: 1rem;
+}
+#pie_Chart_textDiv{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    column-gap: 0.5rem;
+    margin-left: -6rem;
+}
+#pie_Chart_textDiv p{
+    height: 0.5rem;
+}
+#pie_Chart_textDiv img{
+    width: 5.25rem;
+}
+#scattered_imagesDiv{
+    display: flex;
+    flex-direction: column;
+    padding-left: 13rem;
+    row-gap: 4.8rem;
+}
+#scattered_imagesDiv img{
+    width: 7rem;
+}
+#gamePad{
+    margin-left: 5rem;
+    width: 7.5rem;
+}
+#SignIn_headerDiv img{
+    width: 5rem;
+}

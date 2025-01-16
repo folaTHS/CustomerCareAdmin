@@ -1,0 +1,96 @@
+#All_Users_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#All_Users_wrapperDiv{
+   padding: 0rem 7.5rem;
+}
+#All_Users_toggleDiv{
+    width: 18rem;
+    height: 3.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.62rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    background: linear-gradient(120deg, #F6F6F6, #F2EFEF) ;
+}
+.All_Users_listDiv_button{
+    background-color: transparent;
+    border: none;
+    color: #666666;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.toggleDiv_buttonActive{
+    min-width: 3.1rem;
+    background-color: #0E093C;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    height: 2rem;
+    font-size: 0.9rem;
+}
+#All_Users_toggle_dateDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    box-sizing: border-box;
+}
+#searchDiv {
+    margin-top: -0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#searchDiv img {
+    position: absolute;
+    top: 1.9rem;
+    width: 0.93rem;
+    left: 1rem;
+    fill: #9e9ea7;
+}
+
+#searchDiv input {
+    width: 16rem;
+    border-radius: 0.75rem;
+    padding-left: 2.5rem;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    height: 2.43rem;
+}
+
+#All_Users_Card{
+    row-gap: 2rem;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    justify-content: center;
+    gap: 2.3rem;
+}
+#button_Div{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    margin-top: -2rem;
+}
+#button_Div button{
+    width: 8.75rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+#accounts_btn{
+    background-color: #ED2F2F;
+}

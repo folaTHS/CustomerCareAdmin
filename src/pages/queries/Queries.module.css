@@ -1,0 +1,212 @@
+#Reports_mainDiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+
+#Reports_WrapperDiv {
+    padding: 5rem 7.5rem;
+}
+#Query_header_filterDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+#Input_filterDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 0.9rem;
+}
+#Input_filterDiv #searchDiv img{
+    position: absolute;
+    width: 0.93rem;
+    left: 1rem;
+    top: 1.7rem;
+    fill: #9e9ea7;
+}
+#searchDiv{
+    margin-top: -1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#searchDiv input{
+    width: 14.5rem;
+    border-radius: 12px;
+    padding-left:2rem ;
+    box-sizing: border-box;
+    height: 2.5rem;  
+}
+
+.ReportsText {
+    font-size: 1.56rem;
+    color: #1A1A1A;
+}
+.Reports_mapDiv {
+    width: 100%;
+    display: flex;
+    column-gap: 1.7rem;
+    margin-top: 1.5rem;
+}
+/* #Reports_Table_WrapperDiv {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+#Reports_Table_WrapperDiv table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#Reports_Table_WrapperDiv #headerTable {
+    height: 4.5rem;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: lighter;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+#Reports_Table_WrapperDiv tr {
+    color: #666666;
+    font-size: 1rem;
+    height: 15.5rem;
+    border-bottom: 1px solid #C4C4C4;
+}
+#Reports_Table_WrapperDiv tr:last-child{
+    border-bottom: none;
+}
+#Reports_Table_WrapperDiv .tableText {
+    color: #262626;
+    font-weight: bold;
+}
+
+#Reports_Table_WrapperDiv th,
+td {
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+
+}
+
+#Reports_Table_WrapperDiv th {
+    text-align: left;
+}
+
+.statusText {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.81rem;
+    width: 4.25rem;
+    border-radius: 0.25rem;
+    height: 1.62rem;
+}
+.Media_query{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: #262626;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.queryText{
+    width: 11rem;
+} */
+
+#Reports_Table_WrapperDiv {
+    width: 100%;
+    min-height: 20rem;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    overflow-x: auto; /* Add horizontal scroll for small screens */
+}
+
+#Reports_Table_WrapperDiv table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#Reports_Table_WrapperDiv #headerTable {
+    height: 4.5rem;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#Reports_Table_WrapperDiv #headerTable th {
+    font-weight: 550; /* This ensures the th elements themselves are light */
+}
+#Reports_Table_WrapperDiv tr {
+    height: 15rem;
+    color: #666666;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+/* #Reports_Table_WrapperDiv tr:hover {
+    background-color: #f5f5f5;
+} */
+
+#Reports_Table_WrapperDiv .tableText {
+    color: #262626;
+    font-weight: 600;
+}
+
+#Reports_Table_WrapperDiv th,
+#Reports_Table_WrapperDiv td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+}
+#Reports_Table_WrapperDiv tr:last-child td {
+    border-bottom: none;
+}
+
+#Reports_Table_WrapperDiv th:first-child,
+#Reports_Table_WrapperDiv td:first-child {
+    padding-left: 2rem;
+}
+
+#Reports_Table_WrapperDiv th:last-child,
+#Reports_Table_WrapperDiv td:last-child {
+    padding-right: 2rem;
+}
+
+.statusText {
+    border: none;
+    display: inline-block;
+    font-size: 0.81rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+.Media_query {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #262626;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.queryText {
+    width: 15rem;
+    /* white-space: nowrap; */
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}

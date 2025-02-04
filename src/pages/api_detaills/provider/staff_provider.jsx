@@ -1,208 +1,238 @@
-import { addStaffService, getAllStaffService, getCCSummaryService, getStaffDetailsService, suspendStaffService } from "../services/staff_services";
+import {
+  addStaffService,
+  getAllStaffService,
+  getCCSummaryService,
+  getStaffDetailsService,
+  getTopPerformingAgentsService,
+  suspendStaffService,
+} from "../services/staff_services";
 
+export const addStaffProvider = async (
+  body,
+  updateLoadingPopup,
+  updateErrorPopup,
+  updateErrorText,
+  updateSignUpPopup,
+) => {
+  updateLoadingPopup(true);
 
+  try {
+    let response = await addStaffService(body);
+    if (response.status === 200 || response.status === 201) {
+      updateLoadingPopup(false);
 
-export const addStaffProvider = async (body, updateLoadingPopup, updateErrorPopup, updateErrorText, updateSignUpPopup) => {
+      updateSignUpPopup(true);
+    } else {
+      updateLoadingPopup(false);
 
+      updateErrorText(response.data["responseMessage"]);
+
+      updateErrorPopup(true);
+
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
+    }
+  } catch (err) {
+    updateLoadingPopup(false);
+
+    updateErrorText(err.response.data.responseMessage || "Staff Adding failed");
+
+    updateErrorPopup(true);
+
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};
+
+export const getAllStaffProvider = async ({
+  updateAllStaff,
+  updateLoadingPopup,
+  updateErrorText,
+  updateErrorPopup,
+}) => {
+  updateLoadingPopup(true);
+
+  try {
+    let response = await getAllStaffService();
+
+    if (response.status == 200 || response.status == 201) {
+      updateLoadingPopup(false);
+
+      updateAllStaff(response.data["responseBody"]);
+    } else {
+      updateLoadingPopup(false);
+
+      updateErrorText(response.data["responseMessage"]);
+
+      updateErrorPopup(true);
+
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
+    }
+  } catch (err) {
+    updateErrorText(
+      err.response.data.responseMessage || "Error fetching Staff",
+    );
+
+    updateErrorPopup(true);
+
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};
+
+export const getStaffDetailsProvider = async ({
+  updateStaffDetails,
+  url,
+  updateErrorText,
+  updateErrorPopup,
+}) => {
+  try {
+    let response = await getStaffDetailsService(url);
+
+    if (response.status == 200 || response.status == 201) {
+      updateStaffDetails(response.data["responseBody"]);
+    } else {
+      updateErrorText(response.data["responseMessage"]);
+
+      updateErrorPopup(true);
+
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
+    }
+  } catch (err) {
+    updateErrorText(
+      err.response.data.responseMessage || "Error fetching staff Details",
+    );
+
+    updateErrorPopup(true);
+
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};
+
+export const getCCSummaryProvider = async ({
+  updateCCSummary,
+  updateErrorText,
+  updateErrorPopup,
+}) => {
+  try {
+    let response = await getCCSummaryService();
+
+    if (response.status == 200 || response.status == 201) {
+      updateCCSummary(response.data["responseBody"]);
+    } else {
+      updateErrorText(response.data["responseMessage"]);
+
+      updateErrorPopup(true);
+
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
+    }
+  } catch (err) {
+    updateErrorText(
+      err.response
+        ? err.response.data.responseMessage
+        : "Error fetching staff summary",
+    );
+
+    updateErrorPopup(true);
+
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};
+
+export const suspendStaffProvider = async (
+  body,
+  updateSuspendStaff,
+  updateLoadingPopup,
+  updateErrorPopup,
+  updateErrorText,
+  updateSuspendStaffSuccess,
+) => {
+  try {
     updateLoadingPopup(true);
 
-    try {
+    const response = await suspendStaffService(body);
 
-        let response = await addStaffService(body);
+    if (response.status == 200 || response.status == 201) {
+      updateLoadingPopup(false);
 
-        if (response.status === 200 || response.status === 201) {
+      updateSuspendStaff(false);
 
-            updateLoadingPopup(false);
+      updateSuspendStaffSuccess(true);
+    } else {
+      updateErrorText(response.data["responseMessage"]);
 
-            updateSignUpPopup(true)
+      console.log("Error :", err);
 
-        } else {
-
-            updateLoadingPopup(false);
-
-            updateErrorText(response.data["responseMessage"]);
-
-            updateErrorPopup(true)
-
-            setTimeout(() => {
-                updateErrorPopup(false)
-            }, 2000)
-        }
-
-    } catch (err) {
-
-        updateLoadingPopup(false);
-
-        updateErrorText(err.response.data.responseMessage || "Staff Adding failed");
-
-        updateErrorPopup(true);
-
-        setTimeout(() => {
-            updateErrorPopup(false);
-        }, 2000);
+      updateErrorPopup(true);
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
     }
+  } catch (err) {
+    updateLoadingPopup(false);
 
-}
+    updateErrorText(err.response.data.responseMessage || "An Error occurred");
 
+    updateErrorPopup(true);
 
-export const getAllStaffProvider = async ({ updateAllStaff, updateLoadingPopup, updateErrorText, updateErrorPopup }) => {
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};
 
-    updateLoadingPopup(true);
+export const getTopPerformingAgentsProvider = async ({
+  updateTopAgents,
+  updateErrorText,
+  updateErrorPopup,
+  updateLoadingPopup,
+}) => {
+  updateLoadingPopup(true);
 
-    try {
+  try {
+    let response = await getTopPerformingAgentsService();
 
-        let response = await getAllStaffService()
+    if (response.status == 200 || response.status == 201) {
+      updateLoadingPopup(false);
 
-        if (response.status == 200 || response.status == 201) {
+      console.log(response.data);
+      console.log(response.data["responseBody"]);
+      updateTopAgents(response.data["responseBody"]);
+    } else {
+      updateLoadingPopup(false);
 
-            updateLoadingPopup(false);
+      updateErrorText(response.data["responseMessage"]);
 
-            updateAllStaff(response.data["responseBody"]);
+      updateErrorPopup(true);
 
-        } else {
-            updateLoadingPopup(false);
-
-            updateErrorText(response.data["responseMessage"]);
-
-            updateErrorPopup(true)
-
-            setTimeout(() => {
-                updateErrorPopup(false)
-            }, 2000)
-        }
-
-
-
-    } catch (err) {
-        updateErrorText(err.response.data.responseMessage || "Error fetching Staff");
-
-        updateErrorPopup(true)
-
-        setTimeout(() => {
-            updateErrorPopup(false)
-        }, 2000)
+      setTimeout(() => {
+        updateErrorPopup(false);
+      }, 2000);
     }
-}
+  } catch (err) {
+    updateLoadingPopup(false);
 
+    updateErrorText(
+      err?.response?.data?.responseMessage || "Error fetching Staff",
+    );
 
-export const getStaffDetailsProvider = async ({ updateStaffDetails, url, updateErrorText, updateErrorPopup }) => {
+    updateErrorPopup(true);
 
-    try {
-
-        let response = await getStaffDetailsService(url)
-
-        if (response.status == 200 || response.status == 201) {
-
-            updateStaffDetails(response.data["responseBody"]);
-
-
-        } else {
-
-            updateErrorText(response.data["responseMessage"]);
-
-            updateErrorPopup(true)
-
-            setTimeout(() => {
-                updateErrorPopup(false)
-            }, 2000)
-        }
-
-
-
-    } catch (err) {
-
-        updateErrorText(err.response.data.responseMessage || "Error fetching staff Details");
-
-        updateErrorPopup(true)
-
-        setTimeout(() => {
-            updateErrorPopup(false)
-        }, 2000)
-    }
-}
-
-export const getCCSummaryProvider = async ({ updateCCSummary, updateErrorText, updateErrorPopup }) => {
-
-
-    try {
-
-        let response = await getCCSummaryService()
-
-        if (response.status == 200 || response.status == 201) {
-
-            updateCCSummary(response.data["responseBody"]);
-
-
-        } else {
-
-            updateErrorText(response.data["responseMessage"]);
-
-            updateErrorPopup(true)
-
-            setTimeout(() => {
-                updateErrorPopup(false)
-            }, 2000)
-        }
-
-
-
-    } catch (err) {
-
-        updateErrorText(err.response ? err.response.data.responseMessage : "Error fetching staff summary");
-
-        updateErrorPopup(true)
-
-        setTimeout(() => {
-            updateErrorPopup(false)
-        }, 2000)
-    }
-
-}
-
-
-export const suspendStaffProvider = async (body, updateSuspendStaff, updateLoadingPopup, updateErrorPopup, updateErrorText, updateSuspendStaffSuccess) => {
-
-    try {
-
-        updateLoadingPopup(true);
-
-        const response = await suspendStaffService(body);
-
-
-        if (response.status == 200 || response.status == 201) {
-
-            updateLoadingPopup(false);
-
-            updateSuspendStaff(false)
-
-            updateSuspendStaffSuccess(true)
-
-
-        } else {
-
-            updateErrorText(response.data["responseMessage"]);
-
-            console.log("Error :", err);
-
-            updateErrorPopup(true)
-            setTimeout(() => {
-                updateErrorPopup(false)
-            }, 2000)
-
-        }
-
-    } catch (err) {
-
-        updateLoadingPopup(false)
-
-        updateErrorText(err.response.data.responseMessage || 'An Error occurred');
-
-        updateErrorPopup(true)
-        
-        setTimeout(() => {
-            updateErrorPopup(false)
-        }, 2000)
-
-    }
-
-}
+    setTimeout(() => {
+      updateErrorPopup(false);
+    }, 2000);
+  }
+};

@@ -1,4 +1,5 @@
-export const base_url = "https://white-house-api.onrender.com/customer-care-admin/";
+export const base_url =
+  "https://white-house-api.onrender.com/customer-care-admin/";
 export const login_url = `${base_url}api/login`;
 export const getUsers = `${base_url}api/get-all-users`;
 export const getSuspendedAccounts = `${base_url}api/get-suspended-account`;
@@ -11,3 +12,4 @@ export const getUserDetails = `${base_url}api/get-user-details`;
 export const customerSpportSummary = `${base_url}api/customer-support-summary`;
 export const postSuspendStaff = `${base_url}api/suspend-staff`;
 export const suspendUser = `${base_url}api/suspend-or-activate-user`;
+export const getTopPerformingAgents = `${base_url}api/top-performing-agents`;

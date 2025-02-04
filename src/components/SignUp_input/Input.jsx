@@ -1,11 +1,10 @@
-import React from 'react'
-import Style from './Input.module.css'
-
+import React from "react";
+import Style from "./Input.module.css";
 
 const Input = (props) => {
-  const { label, placeholder, type, value, name, onChange, readonly, error } = props
+  const { label, placeholder, type, value, name, onChange, readonly, error } =
+    props;
   return (
-
     <div className={Style.InputDiv}>
       <input
         className={Style.input}
@@ -14,13 +13,12 @@ const Input = (props) => {
         value={value}
         name={name}
         onChange={onChange}
-        readOnly= {readonly}
-      style={{border: `${error ? "1px solid red" : ""}`}}
+        readOnly={readonly}
+        style={{ border: `${error ? "1px solid red" : ""}` }}
       />
       <label className={Style.label}>{label}</label>
     </div>
+  );
+};
 
-  )
-}
-
-export default Input
+export default Input;

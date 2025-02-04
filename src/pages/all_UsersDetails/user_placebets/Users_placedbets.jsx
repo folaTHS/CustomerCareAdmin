@@ -1,217 +1,203 @@
-import React, { useState } from 'react'
-import Style from '../user_placebets/Users_placedbets.module.css'
-import Header from '../../../../../components/header/Header'
-import search from '../../../../../assets/svg/Search.svg'
-import InputField from '../../../../../components/input/InputField'
-import filter_img from '../../../../../assets/svg/Complete_filter_img.svg'
-import download from '../../../../../assets/svg/download_img.svg'
-import Activity from '../../../../../assets/svg/Activity.svg'
-import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
-import Total_Card from '../../../../../components/total_Card/Total_Card'
-import BetPlaced_com from '../../../../../components/bet_placedCom/BetPlaced_com'
-import { useParams } from 'react-router-dom'
+import React, { useState } from "react";
+import Style from "./Users_placedbets.module.css";
+import Header from "../../../components/header/Header";
+import Activity from "../../../assets/svg/Activity.svg";
+import Total_Card from "../../../components/total_Card/Total_Card";
+import BetPlaced_com from "../../../components/bet_placedCom/BetPlaced_com";
+import person from "../../../assets/images/person_img.png";
+import green_eyes from "../../../assets/svg/green_eyes.svg";
+import warning from "../../../assets/svg/yellow_warning.svg";
+import delete_list from "../../../assets/svg/product_delete.svg";
 
 const Users_placedbets = () => {
+  const placedbet_total_Card = [
+    {
+      image1: Activity,
+      text: "Total Amount Staked",
+      divText: "View All",
+      price: "$25,000",
+      to: "",
+      view_div: false,
+    },
+    {
+      image1: Activity,
+      text: "Total Amount Won",
+      divText: "View All",
+      price: "$15,052",
+      view_div: false,
+    },
+    {
+      image1: Activity,
+      text: "Total Amount Loss",
+      divText: "View All",
+      price: "$5,000",
+      view_div: false,
+    },
+    {
+      image1: Activity,
+      text: "Lorem",
+      divText: "View all",
+      price: "23,000",
+      view_div: false,
+    },
+  ];
 
-    const [toggleIndex, setToggleIndex] = useState(0)
-    const [toggleIn, setToggleIn] = useState(0)
+  const arr = [
+    {
+      SN: "1",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Won",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "2",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Lost",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "2",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Lost",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "2",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Lost",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "3",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Won",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "4",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Lost",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+    {
+      SN: "3",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Won",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
 
-    const toggle = (index) => {
-        setToggleIndex(index)
-    }
+    {
+      SN: "3",
+      userID: "5466FH",
+      BetID: "6458575RFG",
+      game: "DiceRoom344",
+      amount: "1000",
+      players: person,
+      status: "Won",
+      win: "5000",
+      action: {
+        eye: green_eyes,
+        warning: warning,
+        delete: delete_list,
+      },
+    },
+  ];
 
-    // let [toggleIndex, setToggleIndex] = useState(0);
+  return (
+    <div id={Style.Users_placedbets_mainDiv}>
+      <Header
+        headerText={"John Doe's Bet Placed"}
+        headerInfo={"Here’s an information on all bets placed by John Doe"}
+      />
 
-    // let { indexParams } = useParams()
-  
-    // let paramIndex = JSON.parse(indexParams)
-  
-  
-    // useEffect(() => {
-    //   setToggleIn(paramIndex)
-    // }, [])
-  
+      <div id={Style.placedbets_wrapperDiv}>
+        <div id={Style.Users_placedbets_mapDiv}>
+          {placedbet_total_Card.map((obj) => {
+            return (
+              <Total_Card
+                key={obj.text}
+                image1={obj.image1}
+                text={obj.text}
+                divText={obj.divText}
+                price={obj.price}
+                to={obj.to}
+                view_div={obj.view_div}
+              />
+            );
+          })}
+        </div>
+        <p id={Style.headerText}>All Bets Overview</p>
 
-    const placedbet_total_Card = [
-        {
-            image1: Activity,
-            text: "Total Amount Staked",
-            divText: "View All",
-            price: "$25,000",
-            to: ""
-        },
-        {
-            image1: Activity,
-            text: "Total Amount Won",
-            divText: "View All",
-            price: "$15,052"
-        },
-        {
-            image1: Activity,
-            text: "Total Amount Loss",
-            divText: "View All",
-            price: "$5,000"
-        },
-        {
-            image1: Activity,
-            text: "Lorem",
-            divText: "View all",
-            price: "23,000"
-        },
-    ]
+        {/* betplaced components */}
+        <div id={window.innerWidth < 480 ? Style.betPlacedComponent : null}>
+          <BetPlaced_com arr={arr} initialIndex={0} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    const arr = [
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Won"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Won"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Lost"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Won"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Lost"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Lost"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Win"
-        },
-        {
-            userID: "SA 123476689",
-            ticketID: "8012345678",
-            amountStaked: "200",
-            Status: "Win"
-        }
-    ]
-
-
-
-
-    return (
-        <div id={Style.Users_placedbets_mainDiv}>
-            <Header
-                headerText={"John Doe's Bet Placed"}
-                headerInfo={"Here’s an information on all bets placed by John Doe"} />
-
-
-            <div id={Style.TotalBet_mainDiv}>
-
-                <div id={Style.Users_placedbets_mapDiv}>
-                    {
-                        placedbet_total_Card.map((object, index) => {
-                            let isBlack = index == toggleIndex ? true : false
-                            return (
-                                <Total_Card
-                                    image1={object.image1}
-                                    text={object.text}
-                                    divText={object.divText}
-                                    price={object.price}
-                                    to={object.to}
-                                    isBlack={isBlack}
-                                    onClick={() => toggle(index)}
-                                />
-                            )
-                        })
-                    }
-                </div>
-
-                <div id={Style.input_FilterDiv}>
-
-                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
-                    <div id={Style.searchDiv}>
-                        <img src={search} alt="" />
-                        <InputField
-                            placeholder={"A-Z"} />
-                    </div>
-
-                    <div id={Style.InputField_images}>
-                        <img src={filter_img} alt="" />
-                        <img id={Style.download_img} src={download} alt="" />
-                    </div>
-
-                </div>
-
-
-                <div id={Style.TotalBet_wrapper}>
-                    <div id={Style.PlaceBet_tableDiv}>
-                        <table>
-                            {   
-                            
-                                toggleIndex == 0 ?    
-
-                           <>
-                                <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>User ID</th>
-                                <th>Ticket ID</th>
-                                <th>Amount Staked</th>
-                                <th>Status</th>
-                            </tr>
-
-                            <tbody>
-                                {
-                                    arr.map((stake, index) => {
-                                        let lost = stake.Status == "Lost" ? true : false
-
-                                        return (
-                                            <tr>
-                                                <td>{index + 1}</td>
-                                                <td>{stake.userID}</td>
-                                                <td>{stake.ticketID}</td>
-                                                <td>{stake.amountStaked}</td>
-                                                <td>
-
-                                                    <div id={Style.statusText} style={{ backgroundColor: lost ? "#c3313133" : "#31c36433", color: lost ? "#C33131" : "#31C364" }}>{stake.Status}</div>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                           </> : ""
-                            }
-
-                        </table>
-
-                        {/* {
-                            toggleIndex == 1 ? 
-                            
-                            // <BetPlaced_com arr={arr}/>
-                            : ""
-
-                        } */}
-                    </div>
-                </div>
-            </div>
-        </div >
-    )
-}
-
-export default Users_placedbets
+export default Users_placedbets;

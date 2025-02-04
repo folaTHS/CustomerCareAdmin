@@ -1,42 +1,47 @@
-import { addStaff, customerSpportSummary, getAllStaff, getStaffDetails, postSuspendStaff } from "../constant/url_path";
+import {
+  addStaff,
+  customerSpportSummary,
+  getAllStaff,
+  getStaffDetails,
+  getTopPerformingAgents,
+  postSuspendStaff,
+} from "../constant/url_path";
 import { authAxios } from "./auth_services";
 
-
 export const addStaffService = async (body) => {
+  const response = await authAxios.post(addStaff, body);
 
-    const response = await authAxios.post(addStaff, body);
-
-    return response;
+  return response;
 };
 
 export const getAllStaffService = async () => {
+  const response = await authAxios.get(getAllStaff);
 
-    const response = await authAxios.get(getAllStaff);
-
-    return response;
+  return response;
 };
 
-
 export const getStaffDetailsService = async (url) => {
+  const response = await authAxios.get(`${getStaffDetails}/${url}`);
 
-    const response = await authAxios.get(`${getStaffDetails}/${url}`);
-
-    return response;
+  return response;
 };
 
 export const getCCSummaryService = async () => {
+  const response = await authAxios.get(customerSpportSummary);
 
-    const response = await authAxios.get(customerSpportSummary);
-
-    return response;
+  return response;
 };
 
 export const suspendStaffService = async (body) => {
+  const response = await authAxios.post(postSuspendStaff, body);
 
-    const response = await authAxios.post(postSuspendStaff, body);
+  console.log(response);
 
-    console.log(response);
+  return response;
+};
 
-
-    return response;
+export const getTopPerformingAgentsService = async () => {
+  const response = await authAxios.get(getTopPerformingAgents);
+  console.log(response);
+  return response;
 };
